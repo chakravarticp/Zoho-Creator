@@ -109,3 +109,15 @@ for each  room in input.Select_Rooms
 	room_rec.Status="Occupied";
 }
 
+
+
+all_checkins = Check_in_form[ID != 0];
+Checkin_count = all_checkins.count(Booking_ID);
+if(Checkin_count != 0)
+{
+	Checked_guests = all_checkins.Booking_ID.getall();
+	pending_checkins = Booking_Form[ID not in Checked_guests].ID.getAll();
+	input.Guest_Name:ui.add(pending_checkins);
+}
+
+
