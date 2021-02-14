@@ -1,0 +1,70 @@
+if(input.Add_Room_Type != null)
+{
+	input.plain = "Number of adults - " + input.Add_Room_Type.Number_of_adults + "<br>Number of children - " + input.Add_Room_Type.Number_of_children + "<br> Room rate per night - " + input.Add_Room_Type.Rate;
+}
+
+
+#Check out
+
+
+if(input.Check_in != null)
+{
+	if(input.Check_in < zoho.currentdate)
+	{
+		alert "Can't choose a past date";
+		input.Check_in = null;
+	}
+	if(input.Check_out != null)
+	{
+		if(input.Check_out < input.Check_in)
+		{
+			alert "Please choose a check-out date later than check-in date";
+			input.Check_in = null;
+		}
+	}
+}
+
+
+#Check in
+
+
+if(input.Check_in != null)
+{
+	if(input.Check_in < zoho.currentdate)
+	{
+		alert "Can't choose a past date";
+		input.Check_in = null;
+	}
+	if(input.Check_out != null)
+	{
+		if(input.Check_out < input.Check_in)
+		{
+			alert "Please choose a check-out date later than check-in date";
+			input.Check_in = null;
+		}
+	}
+}
+
+
+#Check Room Number
+
+if(input.Check_in != null && input.Check_out != null && input.Add_Room_Type != null && Number_of_rooms_needed != null)
+{
+	bookings = Booking_Form[(Check_in <= input.Check_in && Check_out >= input.Check_in) || (Check_in <= input.Check_in && Check_out >= input.Check_out) || (Check_in >= input.Check_in && Check_out <= input.Check_out) || (Check_in <= input.Check_in && Check_out >= input.Check_out) && Add_Room_Type == input.Add_Room_Type];
+	roomcount = 0;
+	if(bookings.count() != 0)
+	{
+		roomcount = bookings.sum(Number_of_rooms_needed);
+	}
+	total_rooms = Add_Room[Add_Room_Type == input.Add_Room_Type].count(Room_Number);
+	Available_room_count = total_rooms - roomcount;
+	if(Available_room_count == 0)
+	{
+		alert "No rooms available for these dates";
+	}
+	else if(input.Number_of_rooms_needed > Available_room_count && Available_room_count != 0)
+	{
+		alert "Only" + Available_room_count + "room available in this type of room";
+		input.Number_of_rooms_needed = null;
+	}
+}
