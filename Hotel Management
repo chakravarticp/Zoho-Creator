@@ -68,3 +68,44 @@ if(input.Check_in != null && input.Check_out != null && input.Add_Room_Type != n
 		input.Number_of_rooms_needed = null;
 	}
 }
+
+
+
+#Availability
+
+
+if(input.Guest_Name != null)
+{
+	input.Booking_ID = input.Guest_Name.Booking_ID;
+	input.Room_Type1 = input.Guest_Name.Add_Room_Type;
+	input.Chcek_in_Date_Time = zoho.currenttime;
+	input.Number_of_rooms_needed = input.Guest_Name.Number_of_rooms_needed;
+	Availables_rooms = Add_Room[Add_Room_Type == input.Room_Type1 && Status == "Available"].ID.getAll();
+	input.Select_Rooms:ui.add(Availables_rooms);
+	number_of_days = days360(input.Guest_Name.Check_in,input.Guest_Name.Check_out);
+	if(number_of_days == 0)
+	{
+		number_of_days = 1;
+	}
+	input.Room_Tariff = input.Room_Type1.Rate * input.Number_of_rooms_needed * number_of_days;
+	input.Total_amount = input.Room_Tariff;
+}
+
+
+
+
+if(input.Tax_Percent != null)
+{
+	input.Total_amount = (input.Room_Tariff * input.Tax_Percent) / 100 + input.Room_Tariff;
+}
+
+
+
+
+
+for each  room in input.Select_Rooms
+{
+	room_rec = Add_Room[ID == room];
+	room_rec.Status="Occupied";
+}
+
