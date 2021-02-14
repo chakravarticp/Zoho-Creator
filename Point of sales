@@ -1,0 +1,25 @@
+#Create Record Script
+
+rec = Add_Product[ID == row.Product];
+row.Unit_Price=rec.Unit_Price;
+discounts = Add_Discount[Product == row.Product];
+if(discounts.count() != 0)
+{
+	row.Discount=discounts.Discount;
+}
+
+
+#Autofill
+
+rec = Add_Product[ID == row.Product];
+row.Unit_Price=rec.Unit_Price;
+discounts = Add_Discount[Product == row.Product];
+if(discounts.count() != 0)
+{
+	row.Discount=discounts.Discount;
+}
+
+
+rec = Add_Product[ID == input.Items.Product];
+rec.Quantity_Available=rec.Quantity_Available - input.Items.Quantity;
+
