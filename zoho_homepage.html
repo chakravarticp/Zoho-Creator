@@ -1,0 +1,479 @@
+<%{
+	%>
+<!DOCTYPE>
+<html>
+<head>
+    <style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
+body{
+	padding: 0;
+	margin: 0;
+	font-family: "Open Sans";
+}
+h1{
+	text-align: center;
+	font-size: 30px;
+}
+h3{
+	text-align: center;
+	font-size: 20px;
+	padding: 20px;
+	font-weight: 400;
+	letter-spacing: 1px;
+
+}
+input[type=text] {
+    
+    padding: 12px 20px;
+    margin: 9px 0;
+    box-sizing: border-box;
+    border-radius: 100px;
+    outline: none;
+    width: 40%;
+    height:8%;
+    boredr:1px solid #7c7b7b;
+}
+input[type=text]:hover {
+	border:1px solid rgb(83, 29, 207);
+	transition: 6s;
+}
+::placeholder { 
+    color: rgb(48, 17, 160);
+    opacity: 1;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+
+}
+button{
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	
+}
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: #DE6262;  
+background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
+background: linear-gradient(to bottom, #FFB88C, #DE6262);
+float:left;
+width:100%;
+padding : 50px 0;
+}
+nav > .nav.nav-tabs{
+
+  border: none;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+
+}
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active
+{
+  border: none;
+    padding: 18px 25px;
+    color:#fff;
+    background:#272e38;
+    border-radius:0;
+}
+
+nav > div a.nav-item.nav-link.active:after
+ {
+  content: "";
+  position: relative;
+  bottom: -60px;
+  left: -10%;
+  border: 15px solid transparent;
+  border-top-color: #e74c3c ;
+}
+.tab-content{
+  background: #fdfdfd;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    border-top:5px solid #e74c3c;
+    border-bottom:5px solid #e74c3c;
+    padding:30px 25px;
+}
+
+nav > div a.nav-item.nav-link:hover,
+nav > div a.nav-item.nav-link:focus
+{
+  border: none;
+    background: #e74c3c;
+    color:#fff;
+    border-radius:0;
+    transition:background 0.20s linear;
+}
+footer{
+	background: rgb(87, 61, 61);
+	text-align: center;
+	padding: 10px;
+
+}
+footer p{
+	color: rgb(10, 5, 5);
+	padding: 10px;
+	margin: 0;
+	font-weight: 700;
+	font-size: 15px;
+}
+@media(max-width: 992px){
+	.btn{
+		width: 20%
+	}
+	input[type=text]{
+		width: 50%;
+	}
+}
+section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    background-color: #f1f4fa;
+}
+.wrap {
+    display: flex;
+    background: white;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.wrap:hover {
+    background: linear-gradient(135deg,#6394ff 0%,#0a193b 100%);
+    color: white;
+}
+
+.ico-wrap {
+    margin: auto;
+}
+
+.mbr-iconfont {
+    font-size: 4.5rem !important;
+    color: #313131;
+    margin: 1rem;
+    padding-right: 1rem;
+}
+.vcenter {
+    margin: auto;
+}
+
+.mbr-section-title3 {
+    text-align: left;
+}
+h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.display-5 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1.4rem;
+}
+.mbr-bold {
+    font-weight: 700;
+}
+
+ p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 25px;
+}
+.display-6 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1re}
+	gray-bg {
+    background-color: lightgrey;
+}
+.blog-grid {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.blog-grid .blog-img {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.for{
+	margin-top: 15px;
+	margin-bottom:10px;
+	font-size:16px;
+	color:grey;
+	text-align:center;
+}
+.blog-grid .blog-img .tag {
+  position: absolute;
+  background: #3a3973;
+  color: #ffffff;
+  padding: 8px 15px;
+  left: 0;
+  top: 10px;
+  font-size: 14px;
+}
+.blog-grid .blog-info {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 20px;
+  margin: -30px 20px 0;
+  position: relative;
+}
+.blog-grid .blog-info h5 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+.blog-grid .blog-info h5 a {
+  color: #3a3973;
+}
+.blog-grid .blog-info p {
+  margin: 0;
+}
+.blog-grid .blog-info .btn-bar {
+  margin-top: 10px;
+}
+
+.px-btn-arrow {
+    padding: 0 50px 0 0;
+    line-height: 10px;
+    position: relative;
+    display: inline-block;
+    color: #fe4f6c;
+    -moz-transition: ease all 0.3s;
+    -o-transition: ease all 0.3s;
+    -webkit-transition: ease all 0.3s;
+    transition: ease all 0.3s;
+}
+.px-btn-arrow .arrow {
+    width: 13px;
+    height: 2px;
+    background: currentColor;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 25px;
+    -moz-transition: ease right 0.3s;
+    -o-transition: ease right 0.3s;
+    -webkit-transition: ease right 0.3s;
+    transition: ease right 0.3s;
+}
+.myDiv {
+  border: 5px outset red;
+  background-color: blue 
+  text-align: right
+  margin: 10px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+              <div class="row">
+                <div class="col-xs-12 ">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="https://creatorapp.zoho.in/aryachakravarti/gnaa-volunteer?#Page:Home_Page" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="https://creatorapp.zoho.in/aryachakravarti/gnaa-volunteer?#Page:Home_Page" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="https://creatorapp.zoho.in/aryachakravarti/gnaa-volunteer?#Page:Home_Page" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                      <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="https://creatorapp.zoho.in/aryachakravarti/gnaa-volunteer?#Page:Home_Page" role="tab" aria-controls="nav-about" aria-selected="false">About</a>
+                    </div>
+                  </nav>
+            
+                </div>
+              </div>
+        </div>
+		<br>
+		
+<h1>Your Life's Work, Powered By Our Life's Work </h1>
+<h3>Unique and powerful suite of software to run your entire business, brought to you by a company with the long term vision to transform the way you work.</h3>
+  
+        <section>
+            <div class="container">
+            
+                <h2> Our Services</h2>
+                    <div class="row mbr-justify-content-center">
+		                <div class="col-lg-6 mbr-col-md-10">
+                            <div class="wrap">
+                                <div class="ico-wrap">
+                                    <span class="mbr-iconfont fa-volume-up fa"></span>
+                                </div>
+                                <div class="text-wrap vcenter">
+                                    <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Stay <span>Emails and Collaborations</span></h2>
+                                    <p class="mbr-fonts-style text1 mbr-text display-6">Empower your workforce with apps to collaborate and transform the way they work.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mbr-col-md-10">
+                            <div class="wrap">
+                                <div class="ico-wrap">
+                                    <span class="mbr-iconfont fa-calendar fa"></span>
+                                </div>
+                                <div class="text-wrap vcenter">
+                                    <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"> <span>Finance</span>
+                                    </h2>
+                                    <p class="mbr-fonts-style text1 mbr-text display-6">Solve business accounting challenges using our perfect set of finance apps on the cloud.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mbr-col-md-10">
+                            <div class="wrap">
+                                <div class="ico-wrap">
+                                    <span class="mbr-iconfont fa-globe fa"></span>
+                                </div>
+                                <div class="text-wrap vcenter">
+                                    <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">
+                                        <span>Sales and Marketing</span>
+                                    </h2>
+                                    <p class="mbr-fonts-style text1 mbr-text display-6">Give your sales team the perfect set of apps to help close more business deals in less time.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mbr-col-md-10">
+                            <div class="wrap">
+                                <div class="ico-wrap">
+                                    <span class="mbr-iconfont fa-trophy fa"></span>
+                                </div>
+                                <div class="text-wrap vcenter">
+                                    <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><span>Human Resources</span></h2>
+                                    <p class="mbr-fonts-style text1 mbr-text display-6">Focus on your people while our apps automate your human resources processes.</p>
+                                </div>
+                            </div>
+                        </div>
+           </div>
+       </div>
+     </section>
+	 
+	 <h1>Trusted by more than 60 million users globally </h1>
+	 <h3>The world’s leading companies trust Zoho to run their different business operations.</h3>
+	 
+	 <br>
+<h1>
+Our support plans</h1>
+
+<h3>
+Here at Zoho, we have three tiers of customer support to help us help you!
+ 	</h3>
+   <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                         
+                                <a href="#">
+								    <div> 
+                                     <p> 
+                                    <img src="http://personal.psu.edu/xqz5228/jpg.jpg">
+                                         </p> 
+                                      </div>
+                                    </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="#">Enterprise
+								</a></h5>
+                                <p>Best suited for bigger businesses, Enterprise support makes your company our top priority. Get quarterly reports and 24*7 product assistance from a dedicated technical account manager.
+							
+                                <div class="btn-bar">
+                                    <a href="#" class="px-btn-arrow">
+                                        <span>Read More</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                            
+                                <a href="#">
+                                    <div> 
+                                     <p> 
+                                    <img src="http://personal.psu.edu/xqz5228/jpg.jpg">
+                                         </p> 
+                                      </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="#">Premium
+								</a></h5>
+                                <p>Receive hands-on support from our team of onboarding specialists and get acquainted with your Zoho product through guided one-on-one sessions and configuration assistance. Learn from the best, with Premium support. <br> <br>
+                           
+                                <div class="btn-bar">
+                                    <a href="#" class="px-btn-arrow">
+                                        <span>Read More</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                              
+                                <a href="#">
+                                    <div> 
+                                     <p> 
+                                    <img src="http://personal.psu.edu/xqz5228/jpg.jpg">
+                                         </p> 
+                                      </div>
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href="#">Classic </h5>
+								</a></h5>
+                                <p>Are you a growing company with a do-it-yourself attitude and a tight budget? Classic support is ideal for you. Drop us an email with your questions or call our support team for free assistance! <br> <br>
+                           
+                                <div class="btn-bar">
+                                    <a href="#" class="px-btn-arrow">
+                                        <span>Read More</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>	
+	
+	 
+	 
+	 <h1>.      .     .
+	 </h1>
+
+<div class="container">
+<div class="row">
+		<h1 class="text-center m-5">SUBSCRIBE TO OUR NEWSLETTER</h1>
+		
+	</div>
+	<section class="bg-dark text-center p-5 mt-4">
+		<div class="container p-3">
+			<h3 class="text-white">SUBSCRIBE NOW</h3>
+			<form action="#" method="Post">
+				<input type="text" name="text" placeholder="Enter Your Email Id">
+				<button type="button" class="btn btn-default">Subscribe<i class="fa fa-envelope"></i></button>
+			</form>
+		</div>
+	</section>
+	
+
+	<footer>
+		<p> Zoho Corporation <br>
+		 Chennai, Tamilnadu <br>
+		India </p>
+	</footer>
+</body>>
+</html>
+<%
+
+}%>
